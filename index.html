@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d12">
+<title>VPN</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#080d12;color:white;font-family:Arial,sans-serif;padding:25px 20px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+.logo{font-size:28px;font-weight:900;letter-spacing:2px}
+.logo span{color:#24e69a}
+.badge{color:#24e69a;border:1px solid #24e69a55;padding:8px;border-radius:20px;font-size:10px}
+h1{text-align:center;font-size:25px;margin-bottom:10px}
+.subtitle{text-align:center;color:#85919c;font-size:14px}
+.ring{width:225px;height:225px;border:1px solid #24e69a55;border-radius:50%;margin:45px auto 25px;display:flex;align-items:center;justify-content:center}
+button{width:175px;height:175px;border-radius:50%;border:2px solid #24e69a;background:#10251f;color:#24e69a;font-size:23px;font-weight:bold}
+.status{text-align:center;color:#85919c;font-size:13px;margin-bottom:35px}
+.card{background:#111920;border:1px solid #26333c;border-radius:17px;padding:20px;margin-bottom:15px}
+.label{color:#82909b;font-size:12px;margin-bottom:15px}
+.server{display:flex;align-items:center;gap:12px}
+.flag{font-size:28px}
+.info{flex:1}
+.name{font-weight:bold}
+.detail{color:#85919c;font-size:12px;margin-top:5px}
+select{width:100%;margin-top:18px;padding:12px;background:#172129;color:white;border:1px solid #34434d;border-radius:10px}
+footer{text-align:center;color:#586570;font-size:11px;margin-top:30px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">VPN<span>.</span></div>
+<div class="badge">● PRIVACY</div>
+</header>
+<h1>Your privacy matters.</h1>
+<p class="subtitle">A simpler way to protect your connection.</p>
+<div class="ring">
+<button onclick="demo()">CONNECT</button>
+</div>
+<div class="status" id="status">Not connected</div>
+<div class="card">
+<div class="label">SELECT SERVER LOCATION</div>
+<div class="server">
+<div class="flag" id="flag">🇩🇪</div>
+<div class="info">
+<div class="name" id="name">Germany</div>
+<div class="detail">Server location</div>
+</div>
+</div>
+<select onchange="changeServer(this)">
+<option value="Germany|🇩🇪">Germany</option>
+<option value="United States|🇺🇸">United States</option>
+<option value="France|🇫🇷">France</option>
+<option value="Netherlands|🇳🇱">Netherlands</option>
+<option value="United Kingdom|🇬🇧">United Kingdom</option>
+</select>
+</div>
+<div class="card">
+<div class="label">VIP SERVERS 👑</div>
+<div class="name">Unlock with an ad</div>
+<div class="detail">VIP access feature coming soon.</div>
+</div>
+<footer>VPN · YOUR CONNECTION, YOUR CHOICE</footer>
+<script>
+function demo(){
+document.getElementById('status').textContent=
+'Demo only — VPN server not connected';
+}
+function changeServer(el){
+let p=el.value.split('|');
+document.getElementById('name').textContent=p[0];
+document.getElementById('flag').textContent=p[1];
+document.getElementById('status').textContent='Not connected';
+}
+</script>
+</body>
+</html>
